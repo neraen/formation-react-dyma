@@ -5,11 +5,7 @@ class MovieList extends React.Component{
     render() {
         return (
             <div className="w-75 d-flex flex-row flew-wrap align-content-start">
-                <MovieElement/>
-                <MovieElement/>
-                <MovieElement/>
-                <MovieElement/>
-                <MovieElement/>
+                {this.props.movies.map((movie, index) => <MovieElement key={movie.title + index} movie={movie} updateSelectedMovie={() => this.props.updateSelectedMovie(index)}/>)}
             </div>
         )
     }
